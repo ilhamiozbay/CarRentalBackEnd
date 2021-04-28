@@ -5,8 +5,4 @@
     <Version>1.0.0</Version>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
-  </ItemGroup>
-
 </Project>

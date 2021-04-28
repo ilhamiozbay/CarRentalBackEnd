@@ -25,10 +25,4 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj" />
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\WebAPI\WebAPI.csproj" />
-  </ItemGroup>
-
 </Project>
