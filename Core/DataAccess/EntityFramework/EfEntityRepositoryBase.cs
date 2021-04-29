@@ -62,6 +62,12 @@ namespace Core.DataAccess.EntityFramework
                  await Context.Set<TEntity>().Where(expression).ToListAsync();
         }
 
+        public async Task<IEnumerable<TEntity>> GetListRangeAsync(int skip, int take, Expression<Func<TEntity, bool>> expression = null)
+        {
+            return expression == null ? await Context.Set<TEntity>().Skip(skip).Take(take).ToListAsync() :
+                 await Context.Set<TEntity>().Where(expression).Skip(skip).Take(take).ToListAsync();
+        }
+
         public int SaveChanges()
         {
             return Context.SaveChanges();

@@ -1,4 +1,5 @@
-﻿using Business.Handlers.Languages.Commands;
+﻿using Business.Handlers.Cars.Queries;
+using Business.Handlers.Languages.Commands;
 using Business.Handlers.Languages.Queries;
 using Core.Entities.Concrete;
 using Core.Entities.Dtos;
@@ -46,41 +47,41 @@ namespace WebAPI.Controllers
         ///<remarks>bla bla bla Languages</remarks>
         ///<return>Languages List</return>
         ///<response code="200"></response>  
-        //[Produces("application/json", "text/plain")]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<SelectionItem>))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        //[HttpGet("getlookup")]
-        //public async Task<IActionResult> GetLookupList()
-        //{
-        //    var result = await Mediator.Send(new GetLanguagesLookUpQuery());
-        //    if (result.Success)
-        //    {
-        //        return Ok(result.Data);
-        //    }
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<SelectionItem>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getlookup")]
+        public async Task<IActionResult> GetLookupList()
+        {
+            var result = await Mediator.Send(new GetCarsLookUpQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
 
-        //    return BadRequest(result.Message);
-        //}
+            return BadRequest(result.Message);
+        }
 
         ///<summary>
-        ///List languages
+        ///List cars
         ///</summary>
         ///<remarks>bla bla bla Languages</remarks>
         ///<return>Languages List</return>
         ///<response code="200"></response>  
-        //[Produces("application/json", "text/plain")]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Language>))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        //[HttpGet("getall")]
-        //public async Task<IActionResult> GetList()
-        //{
-        //    var result = await Mediator.Send(new GetLanguagesQuery());
-        //    if (result.Success)
-        //    {
-        //        return Ok(result.Data);
-        //    }
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Car>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getall")]
+        public async Task<IActionResult> GetList()
+        {
+            var result = await Mediator.Send(new GetCarsQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
 
-        //    return BadRequest(result.Message);
-        //}
+            return BadRequest(result.Message);
+        }
 
         ///<summary>
         ///It brings the details according to its id.
