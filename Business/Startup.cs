@@ -105,6 +105,7 @@ namespace Business
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<ICarRepository, CarRepository>();
 
 
             services.AddTransient<IUserRepository, UserRepository>();
@@ -130,6 +131,7 @@ namespace Business
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<ICarRepository, CarRepository>();
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserClaimRepository, UserClaimRepository>();
@@ -154,6 +156,7 @@ namespace Business
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<ICarRepository, CarRepository>();
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserClaimRepository, UserClaimRepository>();
